@@ -11,14 +11,11 @@ function createFile(req, res){
 
   if(!file.fileName){
     res.status(400).send({message: 'the name of the file is required'})
-  }else if(!file.fileTitle){
-    res.status(400).send({message: 'the title of the file is required'})
-  }else if(!file.fileDescription){
-    res.status(400).send({message: 'thie description of the file is required'})
   }
 
   file.save(error => {
     if(error){
+      console.log(error)
       res.status(500).send({messsage:`An error occurred attempting to create the new file. ${error}`});
     }
     res.status(200).send({message: 'the new file was saved correctly', file});
