@@ -44,6 +44,7 @@ function updateFile(req, res){
   const fileTitle = req.body.fileTitle;
   const fileName = req.body.fileName;
   const fileDescription = req.body.fileDescription;
+  const fileDescriptionTagged = req.body.fileDescriptionTagged;
 
   File.findOne({ _id: id }).then((file) => {
     if(!file._id){
@@ -53,6 +54,7 @@ function updateFile(req, res){
     file.fileTitle = fileTitle;
     file.fileName = fileName;
     file.fileDescription = fileDescription;
+    file.fileDescriptionTagged = fileDescriptionTagged;
     
 
     file.save().then(() => {
