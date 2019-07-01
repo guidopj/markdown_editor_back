@@ -6,4 +6,4 @@
 ### 4) run git clone https://github.com/guidopj/markdown_editor_back
 ### 5) run cd markdown_editor_back
 ### 6) run npm install
-### 6) run npm start
+### 7) run npm start
